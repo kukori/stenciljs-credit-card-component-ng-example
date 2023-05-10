@@ -1,14 +1,17 @@
 
 <div class="content" role="main">
-  <card-form-container> 
-    <credit-card-input slot="credit-card"></credit-card-input>
-    <card-expiration-input slot="expiration"></card-expiration-input>
-    <cvv-input slot="cvv"></cvv-input>
-    <card-holder-input slot="card-holder"></card-holder-input>
-  </card-form-container>
-  <div style="display: flex; flex-direction: column; margin-top: 8px;">
-    <error-message>The card number is required</error-message>
-  </div>  
+  <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+    <card-form-container> 
+      <credit-card-input formControlName="creditCard" slot="credit-card"></credit-card-input>
+      <card-expiration-input formControlName="cardExpiration" slot="expiration"></card-expiration-input>
+      <cvv-input formControlName="cvv" [value]="form.value.cvv" slot="cvv"></cvv-input>
+      <card-holder-input formControlName="cardHolder" slot="card-holder"></card-holder-input>
+    </card-form-container>
+    <div class="error-message" *ngIf="!this.form.valid">
+      <error-message>The card number is required</error-message>
+    </div>
+    <button>Submit</button>
+  </form>
 </div>
 
 <router-outlet></router-outlet>
