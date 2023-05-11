@@ -2,13 +2,13 @@
 <div class="content" role="main">
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <card-form-container> 
-      <app-credit-card formControlName="creditCard" ></app-credit-card>
-      <app-expiration formControlName="cardExpiration" ></app-expiration>
-      <app-cvv formControlName="cvv" ></app-cvv>
-      <app-card-holder formControlName="cardHolder"></app-card-holder>
+      <app-credit-card formControlName="creditCard" slot="credit-card"></app-credit-card>
+      <app-expiration formControlName="cardExpiration" slot="expiration"></app-expiration>
+      <app-cvv formControlName="cvv" slot="cvv"></app-cvv>
+      <app-card-holder formControlName="cardHolder" slot="card-holder"></app-card-holder>
     </card-form-container>
     <div class="error-message" *ngIf="!this.form.valid">
-      <error-message>The card number is required</error-message>
+      <error-message>Please fill all the values</error-message>
     </div>
     <button>Submit</button>
   </form>

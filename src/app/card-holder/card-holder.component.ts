@@ -10,7 +10,7 @@ export const CUSTOM_INPUT_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'app-card-holder',
-  template: `<card-holder-input (change)="onValueChange($event)" slot="card-holder"></card-holder-input>`,
+  template: `<card-holder-input (change)="onValueChange($event)"></card-holder-input>`,
   providers: [CUSTOM_INPUT_VALUE_ACCESSOR],
 })
 export class CardHolderComponent implements ControlValueAccessor {

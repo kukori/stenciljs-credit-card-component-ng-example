@@ -10,7 +10,7 @@ export const CUSTOM_INPUT_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'app-cvv',
-  template: `<cvv-input (change)="onValueChange($event)" slot="cvv"></cvv-input>`,
+  template: `<cvv-input (change)="onValueChange($event)"></cvv-input>`,
   providers: [CUSTOM_INPUT_VALUE_ACCESSOR],
 })
 export class CvvComponent implements ControlValueAccessor {

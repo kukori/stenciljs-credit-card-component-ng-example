@@ -10,7 +10,7 @@ export const CUSTOM_INPUT_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'app-expiration',
-  template: `<card-expiration-input (change)="onValueChange($event)" slot="expiration"></card-expiration-input>`,
+  template: `<card-expiration-input (change)="onValueChange($event)"></card-expiration-input>`,
   providers: [CUSTOM_INPUT_VALUE_ACCESSOR],
 })
 export class ExpirationComponent implements ControlValueAccessor {
