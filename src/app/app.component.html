@@ -2,10 +2,10 @@
 <div class="content" role="main">
   <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
     <card-form-container> 
-      <credit-card-input formControlName="creditCard" slot="credit-card"></credit-card-input>
-      <card-expiration-input formControlName="cardExpiration" slot="expiration"></card-expiration-input>
-      <cvv-input formControlName="cvv" [value]="form.value.cvv" slot="cvv"></cvv-input>
-      <card-holder-input formControlName="cardHolder" slot="card-holder"></card-holder-input>
+      <app-credit-card formControlName="creditCard" ></app-credit-card>
+      <app-expiration formControlName="cardExpiration" ></app-expiration>
+      <app-cvv formControlName="cvv" ></app-cvv>
+      <app-card-holder formControlName="cardHolder"></app-card-holder>
     </card-form-container>
     <div class="error-message" *ngIf="!this.form.valid">
       <error-message>The card number is required</error-message>
